@@ -1,1 +1,209 @@
 # lingges1.github.io
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lingges Shaswat – Aerospace Portfolio</title>
+  <meta name="description" content="Portfolio of an aspiring aerospace engineer: projects, reports, skills, and contact." />
+  <style>
+    :root {
+      --bg: #0b0f17;       /* deep navy */
+      --card: #121826;     /* slate */
+      --ink: #e6edf6;      /* off-white */
+      --muted: #a8b3c7;    /* muted text */
+      --accent: #7aa2ff;   /* cool blue */
+      --accent-2: #b6f09c; /* lime tint */
+      --ring: rgba(122,162,255,0.35);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 10% 0%, rgba(122,162,255,0.08), transparent 60%),
+                  radial-gradient(800px 600px at 90% 10%, rgba(182,240,156,0.08), transparent 60%),
+                  var(--bg);
+      color: var(--ink); line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; backdrop-filter: blur(8px);
+      background: linear-gradient(to bottom, rgba(11,15,23,0.85), rgba(11,15,23,0.6));
+      border-bottom: 1px solid rgba(122,162,255,0.12);
+      z-index: 10;
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand { font-weight: 700; letter-spacing: 0.3px; }
+    .brand small { color: var(--muted); font-weight: 500; }
+    .nav a { margin-left: 16px; font-weight: 600; }
+
+    /* Hero */
+    .hero { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 28px; align-items: center; padding: 64px 0 16px; }
+    .hero h1 { font-size: clamp(32px, 6vw, 56px); line-height: 1.05; margin: 0 0 12px; }
+    .hero p { color: var(--muted); margin: 0 0 24px; }
+    .tag { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: rgba(122,162,255,0.12); color: var(--ink); border: 1px solid rgba(122,162,255,0.25); font-weight: 600; }
+    .cta { display: inline-flex; gap: 12px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 16px; border-radius: 12px; border: 1px solid rgba(122,162,255,0.35); background: linear-gradient(160deg, rgba(122,162,255,0.16), rgba(182,240,156,0.12)); color: var(--ink); font-weight: 700; }
+    .btn:hover { box-shadow: 0 0 0 3px var(--ring); text-decoration: none; }
+    .ghost { background: transparent; }
+
+    .card {
+      background: linear-gradient(180deg, rgba(18,24,38,0.95), rgba(18,24,38,0.8));
+      border: 1px solid rgba(122,162,255,0.18);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .panel { padding: 20px; border-radius: 16px; background: rgba(255,255,255,0.02); border: 1px dashed rgba(122,162,255,0.25); }
+
+    /* Sections */
+    section { padding: 48px 0; }
+    h2 { font-size: clamp(22px, 3vw, 30px); margin: 0 0 18px; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+
+    /* About */
+    .about p { color: var(--muted); }
+
+    /* Projects */
+    .project { grid-column: span 12; display: grid; grid-template-columns: 1fr; gap: 12px; padding: 18px; }
+    .project h3 { margin: 0; font-size: 20px; }
+    .meta { color: var(--muted); font-size: 14px; }
+    .badges { display: flex; flex-wrap: wrap; gap: 8px; }
+    .badge { padding: 6px 10px; border-radius: 999px; background: rgba(255,255,255,0.04); border: 1px solid rgba(122,162,255,0.22); font-size: 12px; color: var(--ink); }
+
+    /* Skills */
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .chip { padding: 10px 12px; border-radius: 999px; background: rgba(122,162,255,0.12); border: 1px solid rgba(122,162,255,0.25); }
+
+    /* Footer */
+    footer { padding: 40px 0; color: var(--muted); border-top: 1px solid rgba(122,162,255,0.12); }
+
+    /* Responsive */
+    @media (max-width: 880px) {
+      .hero { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">Your Name <small>• Aerospace Engineer</small></div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#reports">Reports</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div>
+        <span class="tag">🚀 Aerospace • Python • Data</span>
+        <h1>Bringing flight dynamics, simulation, and data together.</h1>
+        <p>I’m an aspiring aerospace engineer focused on flight dynamics, simulation, and data-driven insight. I build clean tools in Python and communicate results clearly.</p>
+        <div class="cta">
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn ghost" href="#contact">Contact Me</a>
+        </div>
+      </div>
+      <div class="card panel">
+        <strong>Quick Links</strong>
+        <ul>
+          <li><a href="#reports">University reports</a> (PDFs embedded)</li>
+          <li><a href="assets/CV.pdf" target="_blank" rel="noreferrer noopener">Download CV</a></li>
+          <li><a href="https://github.com/your-username" target="_blank" rel="noreferrer noopener">GitHub</a></li>
+          <li><a href="mailto:you@example.com">you@example.com</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about">
+      <h2>About</h2>
+      <p>Short bio about your aerospace interests, tools (Python, MATLAB, CFD, CAD), and current role or goals. Keep it concise and concrete—what you like building and why.</p>
+    </section>
+
+    <!-- Projects (code + analysis) -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid">
+        <!-- Example project card -->
+        <article class="project card">
+          <h3>6-DOF Aircraft Simulator</h3>
+          <div class="meta">Python • NumPy • SciPy • Matplotlib</div>
+          <p>Numerically integrated 6-DOF equations of motion with a PID autopilot. Produced trajectory plots and stability analysis.</p>
+          <div class="badges">
+            <span class="badge">Flight Dynamics</span>
+            <span class="badge">Control</span>
+            <span class="badge">Numerical Methods</span>
+          </div>
+          <p>
+            <a href="https://github.com/your-username/aircraft-6dof" target="_blank" rel="noreferrer noopener">Code</a> ·
+            <a href="projects/6dof.html">Write-up</a>
+          </p>
+        </article>
+
+        <!-- Duplicate the article block for more projects -->
+      </div>
+    </section>
+
+    <!-- Reports (embed PDFs) -->
+    <section id="reports">
+      <h2>University Reports</h2>
+      <p class="meta">PDFs are embedded for quick viewing. Each opens in a new tab for download.</p>
+
+      <div class="grid">
+        <article class="project card">
+          <h3>Wing Optimization with Genetic Algorithms</h3>
+          <p>Optimized airfoil for L/D using a GA + XFOIL wrapper; validated vs. baseline.</p>
+          <p><a href="assets/wing-optimization.pdf" target="_blank" rel="noreferrer noopener">Open PDF</a></p>
+          <object data="assets/wing-optimization.pdf" type="application/pdf" width="100%" height="420">
+            <p>PDF preview unavailable in this browser. <a href="assets/wing-optimization.pdf" target="_blank" rel="noreferrer noopener">Open the report</a>.</p>
+          </object>
+        </article>
+
+        <article class="project card">
+          <h3>Orbital Mechanics Coursework</h3>
+          <p>Lambert solver comparisons and multi-burn transfer analysis with perturbations.</p>
+          <p><a href="assets/orbital-mechanics.pdf" target="_blank" rel="noreferrer noopener">Open PDF</a></p>
+          <object data="assets/orbital-mechanics.pdf" type="application/pdf" width="100%" height="420">
+            <p>PDF preview unavailable. <a href="assets/orbital-mechanics.pdf" target="_blank" rel="noreferrer noopener">Open the report</a>.</p>
+          </object>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>If you’d like to talk about internships, graduate roles, or collaboration, email me or message via LinkedIn.</p>
+      <ul>
+        <li>Email: <a href="mailto:you@example.com">you@example.com</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noreferrer noopener">linkedin.com/in/your-handle</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="y"></span> Your Name. Built with plain HTML/CSS. Deployed on GitHub Pages/Netlify.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
