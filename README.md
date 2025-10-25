@@ -96,7 +96,7 @@
 <body>
   <header>
     <div class="container nav">
-      <div class="brand">Your Name <small>• Aerospace Engineer</small></div>
+      <div class="brand">Lingges Shaswat <small>• Aerospace Engineer</small></div>
       <nav>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
