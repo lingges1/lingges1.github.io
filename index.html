@@ -89,6 +89,80 @@
     @media (max-width: 880px) {
       .hero { grid-template-columns: 1fr; }
     }
+
+    /* --- Project media grid + lightbox --- */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 10px;
+  margin-top: 6px;
+}
+.media {
+  grid-column: span 4;              /* 3-up on desktop */
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(122,162,255,0.18);
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: zoom-in;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.media:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,0,0,.25); }
+.media img {
+  display: block;
+  width: 100%;
+  height: 140px;
+  object-fit: cover;                /* crops nicely */
+}
+.media figcaption {
+  padding: 8px 10px;
+  font-size: 12px;
+  color: var(--muted);
+  border-top: 1px solid rgba(122,162,255,0.12);
+}
+
+/* 2-up on tablets, 1-up on phones */
+@media (max-width: 880px) { .media { grid-column: span 6; } }
+@media (max-width: 560px){ .media { grid-column: span 12; } }
+
+/* Lightbox */
+#lightbox {
+  position: fixed; inset: 0; display: none; place-items: center;
+  background: rgba(0,0,0,.6); backdrop-filter: blur(2px);
+  z-index: 1000;
+}
+#lightbox.open { display: grid; }
+#lightbox img {
+  max-width: min(92vw, 1200px);
+  max-height: 86vh;
+  border-radius: 16px;
+  border: 1px solid rgba(122,162,255,0.35);
+  box-shadow: 0 20px 60px rgba(0,0,0,.5);
+}
+.lightbox-ui {
+  position: fixed; inset: 0; pointer-events: none;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 24px;
+}
+.lightbox-btn {
+  pointer-events: auto;
+  border: 1px solid rgba(122,162,255,0.35);
+  background: rgba(18,24,38,.85);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-weight: 700;
+}
+.lightbox-close {
+  position: fixed; top: 16px; right: 16px;
+  pointer-events: auto;
+  border: 1px solid rgba(122,162,255,0.35);
+  background: rgba(18,24,38,.85);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-weight: 800;
+}
+
   </style>
 </head>
 <body>
