@@ -234,10 +234,60 @@
 .role-body ul { margin: 8px 0 0; padding-left: 18px; color: var(--muted); }
 .role-body li + li { margin-top: 6px; }
 
+    /* --- Shooting star (CSS-only) --- */
+.sky {
+  position: fixed; inset: 0;
+  pointer-events: none;          /* don't block clicks */
+  z-index: 0;                    /* behind your content */
+}
+
+.shooting-star {
+  position: absolute;
+  width: 2px; height: 2px;
+  background: transparent;
+  transform: rotate(315deg);     /* heading down-right */
+  filter: drop-shadow(0 0 6px #fff);
+  /* Tail via pseudo-element */
+}
+.shooting-star::before {
+  content: "";
+  position: absolute;
+  right: 0; top: 0;
+  height: 2px; width: 0;
+  background: linear-gradient(90deg, rgba(255,255,255,0), #e6edf6 40%, #b6f09c 80%);
+  border-radius: 2px;
+  box-shadow: 0 0 12px rgba(182,240,156,0.8);
+  animation: star-tail var(--dur,1.2s) ease-out forwards;
+}
+
+@keyframes star-tail {
+  0%   { width: 0; opacity: 0; }
+  15%  { width: 120px; opacity: 1; }
+  100% { width: 0; opacity: 0; }
+}
+
+@keyframes star-move {
+  0%   { transform: translate(var(--x), var(--y)) rotate(315deg); opacity: 0; }
+  10%  { opacity: 1; }
+  100% { transform: translate(calc(var(--x) + 60vw), calc(var(--y) + 60vh)) rotate(315deg); opacity: 0; }
+}
+
+/* Respect user preference */
+@media (prefers-reduced-motion: reduce) {
+  .sky, .shooting-star, .shooting-star::before { animation: none !important; }
+}
+
   </style>
 </head>
 <body>
   <header>
+    <div class="sky">
+  <!-- Place a few stars with different positions & delays -->
+  <div class="shooting-star" style="--x: 5vw;  --y: 10vh; --dur: 1.2s; animation: star-move 1.2s ease-out 0s forwards;"></div>
+  <div class="shooting-star" style="--x: 30vw; --y: 5vh;  --dur: 1.4s; animation: star-move 1.4s ease-out 1.5s forwards;"></div>
+  <div class="shooting-star" style="--x: 60vw; --y: 15vh; --dur: 1.1s; animation: star-move 1.1s ease-out 3s forwards;"></div>
+</div>
+
     <div class="container nav">
       <div class="brand">Lingges Shaswat <small>• University of Bristol</small> <small>• Graduate Aerospace Engineer</small></div>
       <nav>
