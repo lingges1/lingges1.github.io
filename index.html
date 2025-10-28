@@ -271,8 +271,18 @@
 
           <div class="project-links">
             <a href="assets/AVDASI_4_FEDR.pdf" class="btn-sm">📄 Report Summary</a>
-            <a href="assets/AVDASI_4_FEDR.pdf" class="btn-sm ghost">👥 My Role</a>
+              <a href="#" class="btn-sm ghost open-role" data-role="role-airbus">👤 My Role</a>
           </div>
+          <!-- Role content template for this project -->
+<template id="role-airbus">
+  <ul>
+    <li><strong>Chief Engineer:</strong> coordinated landing gear + fuel system workstreams across subteams.</li>
+    <li><strong>Fuel system design:</strong> sizing, layout, venting, and failure cases; cross-checked against CS-25.</li>
+    <li><strong>Landing gear loads:</strong> preliminary sizing, ground loads, and kinematics constraints.</li>
+    <li><strong>Systems integration:</strong> weight/performance trade-offs, cost target tracking, compliance.</li>
+    <li><strong>Outcome:</strong> 6% DOC reduction vs baseline; compliant with ICAO Code C & CS-25.</li>
+  </ul>
+</template>
         </article>
 
         <!-- Duplicate the article block for more projects -->
