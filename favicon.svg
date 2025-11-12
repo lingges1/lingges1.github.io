@@ -1,10 +1,11 @@
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
   <rect width="256" height="256" fill="#0b0f17"/>
-  <text x="50%" y="52%" text-anchor="middle"
+  <!-- Bigger LS, centered slightly lower so it fills the icon more -->
+  <text x="50%" y="60%" text-anchor="middle"
         dominant-baseline="middle"
         font-family="Georgia, Times New Roman, serif"
-        font-size="150" fill="#ffffff">
-    LS<tspan dy="-65" dx="8" font-size="70">1</tspan>
+        font-size="190" fill="#ffffff">
+    LS<tspan dy="-80" dx="10" font-size="90">1</tspan>
   </text>
 </svg>
