@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7aa2ff"></stop>
+      <stop offset="1" stop-color="#b6f09c"></stop>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="256" height="256" fill="#0b0f17"></rect>
+
+  <!-- LS¹ text -->
+  <text x="50%" y="60%" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="150" fill="url(#grad)">
+    LS<tspan dy="-70" dx="6" font-size="70">1</tspan>
+  </text>
+</svg>
