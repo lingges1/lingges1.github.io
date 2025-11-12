@@ -46,8 +46,37 @@
       z-index: 10;
     }
     .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-    .brand { font-weight: 700; letter-spacing: 0.3px; }
-    .brand small { color: var(--muted); font-weight: 500; }
+    .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+}
+
+.brand-logo {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-name {
+  font-size: 16px;
+}
+
+.brand-meta {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+    
     .nav a { margin-left: 16px; font-weight: 600; }
 
     /* Hero */
@@ -290,19 +319,31 @@
 
   </style>
 </head>
-<body>
-  <header>
-    <div id="starsField" class="stars-field" aria-hidden="true"></div>
+<body id="top">
+ <header>
+  <div id="starsField" class="stars-field" aria-hidden="true"></div>
 
-    <div class="container nav">
-      <div class="brand">Lingges Shaswat <small>• Aerospace Engineering</small> <small>• University of Bristol</small></div>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <div class="container nav">
+
+    <a href="#top" class="brand">
+      <img src="favicon.svg" alt="LS1 logo" class="brand-logo">
+      <div class="brand-text">
+        <span class="brand-name">Lingges Shaswat</span>
+        <span class="brand-meta">Aerospace Engineering • University of Bristol</span>
+      </div>
+    </a>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+
+  
 
   <main class="container">
     <!-- Hero -->
