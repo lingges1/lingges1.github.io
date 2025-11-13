@@ -1,940 +1,919 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lingges Shaswat – Aerospace Engineering Portfolio</title>
-      <!-- Favicons -->
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="/favicon-16.png" sizes="16x16" type="image/png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-  <meta name="description" content="Portfolio of an aspiring aerospace engineer: projects, reports, skills, and contact." />
-  <style>
-    html {
-  scroll-behavior: smooth;
-}
-
-    :root {
-      --bg: #0b0f17;       /* deep navy */
-      --card: #121826;     /* slate */
-      --ink: #e6edf6;      /* off-white */
-      --muted: #a8b3c7;    /* muted text */
-      --accent: #7aa2ff;   /* cool blue */
-      --accent-2: #b6f09c; /* lime tint */
-      --ring: rgba(122,162,255,0.35);
-      --radius: 18px;
-    }
-
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;   padding-top: 20px; /* ADD THIS LINE */
- font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      background: radial-gradient(1200px 600px at 10% 0%, rgba(122,162,255,0.08), transparent 60%),
-                  radial-gradient(800px 600px at 90% 10%, rgba(182,240,156,0.08), transparent 60%),
-                  var(--bg);
-      color: var(--ink); line-height: 1.6;
-    }
-
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
-
-    /* Header */
-    header {
-      position: fixed;
-width: 100%;
-top: 0;
-left: 0;
- backdrop-filter: blur(8px);
-      background: linear-gradient(to bottom, rgba(11,15,23,0.85), rgba(11,15,23,0.6));
-      border-bottom: 1px solid rgba(122,162,255,0.12);
-      z-index: 10;
-    }
-    .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-    .brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 700;
-}
-
-.brand-logo {
-  width: 34px;
-  height: 34px;
-  border-radius: 8px;
-  flex-shrink: 0;
-}
-
-.brand-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
-.brand-name {
-  font-size: 16px;
-}
-
-.brand-meta {
-  font-size: 12px;
-  color: var(--muted);
-  font-weight: 500;
-}
-
-    
-    .nav a { margin-left: 16px; font-weight: 600; }
-
-    /* Hero */
-    .hero { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 28px; align-items: center; padding: 64px 0 16px; }
-    .hero h1 { font-size: clamp(32px, 6vw, 56px); line-height: 1.05; margin: 0 0 12px; }
-    .hero p { color: var(--muted); margin: 0 0 24px; }
-    .tag { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: rgba(122,162,255,0.12); color: var(--ink); border: 1px solid rgba(122,162,255,0.25); font-weight: 600; }
-    .cta { display: inline-flex; gap: 12px; }
-    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 16px; border-radius: 12px; border: 1px solid rgba(122,162,255,0.35); background: linear-gradient(160deg, rgba(122,162,255,0.16), rgba(182,240,156,0.12)); color: var(--ink); font-weight: 700; }
-    .btn:hover { box-shadow: 0 0 0 3px var(--ring); text-decoration: none; }
-    .ghost { background: transparent; }
-
-    .card {
-      background: linear-gradient(180deg, rgba(18,24,38,0.95), rgba(18,24,38,0.8));
-      border: 1px solid rgba(122,162,255,0.18);
-      border-radius: var(--radius);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-    }
-
-    .panel { padding: 20px; border-radius: 16px; background: rgba(255,255,255,0.02); border: 1px dashed rgba(122,162,255,0.25); }
-
-    .panel ul { margin: 10px 0 0; padding-left: 18px; }
-
-    /* Sections */
-    section { padding: 48px 0; }
-    h2 { font-size: clamp(22px, 3vw, 30px); margin: 0 0 18px; }
-    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
-
-    /* About */
-    .about p { color: var(--muted); }
-
-    /* Projects */
-    .project { grid-column: span 12; display: grid; grid-template-columns: 1fr; gap: 12px; padding: 18px; }
-    .project h3 { margin: 0; font-size: 20px; }
-    .meta { color: var(--muted); font-size: 14px; }
-    .badges { display: flex; flex-wrap: wrap; gap: 8px; }
-    .badge { padding: 6px 10px; border-radius: 999px; background: rgba(255,255,255,0.04); border: 1px solid rgba(122,162,255,0.22); font-size: 12px; color: var(--ink); }
-
-    /* Skills */
-    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
-    .chip { padding: 10px 12px; border-radius: 999px; background: rgba(122,162,255,0.12); border: 1px solid rgba(122,162,255,0.25); }
-
-    /* Footer */
-    footer { padding: 40px 0; color: var(--muted); border-top: 1px solid rgba(122,162,255,0.12); }
-
-    /* Responsive */
-    @media (max-width: 880px) {
-      .hero { grid-template-columns: 1fr; }
-    }
-
-    /* --- Project media grid + lightbox --- */
-.media-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 10px;
-  margin-top: 6px;
-}
-.media {
-  grid-column: span 4;              /* 3-up on desktop */
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(122,162,255,0.18);
-  border-radius: 14px;
-  overflow: hidden;
-  cursor: zoom-in;
-  transition: transform .15s ease, box-shadow .15s ease;
-}
-.media:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,0,0,.25); }
-.media img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  height: auto;
-  object-fit: cover;                /* crops nicely */
-}
-.media figcaption {
-  padding: 8px 10px;
-  font-size: 12px;
-  color: var(--muted);
-  border-top: 1px solid rgba(122,162,255,0.12);
-}
-
-/* 2-up on tablets, 1-up on phones */
-@media (max-width: 880px) { .media { grid-column: span 6; } }
-@media (max-width: 560px){ .media { grid-column: span 12; } }
-
-/* Lightbox */
-#lightbox {
-  position: fixed; inset: 0; display: none; place-items: center;
-  background: rgba(0,0,0,.6); backdrop-filter: blur(2px);
-  z-index: 1000;
-}
-#lightbox.open { display: grid; }
-#lightbox img {
-  max-width: min(92vw, 1200px);
-  max-height: 86vh;
-  border-radius: 16px;
-  border: 1px solid rgba(122,162,255,0.35);
-  box-shadow: 0 20px 60px rgba(0,0,0,.5);
-}
-.lightbox-ui {
-  position: fixed; inset: 0; pointer-events: none;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 24px;
-}
-.lightbox-btn {
-  pointer-events: auto;
-  border: 1px solid rgba(122,162,255,0.35);
-  background: rgba(18,24,38,.85);
-  color: var(--ink);
-  border-radius: 999px;
-  padding: 10px 14px;
-  font-weight: 700;
-}
-.lightbox-close {
-  position: fixed; top: 16px; right: 16px;
-  pointer-events: auto;
-  border: 1px solid rgba(122,162,255,0.35);
-  background: rgba(18,24,38,.85);
-  color: var(--ink);
-  border-radius: 999px;
-  padding: 10px 14px;
-  font-weight: 800;
-}
-    /* --- New button styling for report/methodology links --- */
-.project-links {
-  display: flex;
-  gap: 12px;
-  margin-top: 8px;
-}
-
-.btn-sm {
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 12px;
-  border-radius: 10px;
-  border: 1px solid rgba(122,162,255,0.35);
-  background: rgba(122,162,255,0.1);
-  color: var(--ink);
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.btn-sm.ghost {
-  background: transparent;
-  border-color: rgba(182,240,156,0.3);
-}
-
-.btn-sm:hover {
-  box-shadow: 0 0 0 2px var(--ring);
-  text-decoration: none;
-}
-
-    /* --- Role modal --- */
-#roleModal {
-  position: fixed; inset: 0;
-  display: none; place-items: center;
-  background: rgba(0,0,0,.6); backdrop-filter: blur(2px);
-  z-index: 1100;
-}
-#roleModal.open { display: grid; }
-
-.role-card {
-  width: min(680px, 92vw);
-  background: linear-gradient(180deg, rgba(18,24,38,0.98), rgba(18,24,38,0.9));
-  border: 1px solid rgba(122,162,255,0.28);
-  border-radius: var(--radius);
-  box-shadow: 0 20px 60px rgba(0,0,0,.5);
-  padding: 18px 18px 20px;
-  color: var(--ink);
-}
-
-.role-header {
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 10px; margin-bottom: 10px;
-}
-.role-title {
-  font-size: 20px; margin: 0;
-}
-
-.role-close {
-  border: 1px solid rgba(122,162,255,0.35);
-  background: rgba(18,24,38,.85);
-  color: var(--ink);
-  border-radius: 999px;
-  padding: 8px 12px;
-  font-weight: 800;
-  cursor: pointer;
-}
-
-.role-body ul { margin: 8px 0 0; padding-left: 18px; color: var(--muted); }
-.role-body li + li { margin-top: 6px; }
-
-    /* --- Twinkling stars field --- */
-.stars-field {
-  position: fixed; inset: 0;
-  pointer-events: none;           /* never block clicks */
-  z-index: 0;                     /* sits behind your content */
-  overflow: hidden;
-}
-
-.star {
-  position: absolute;
-  width: var(--size, 3px);
-  height: var(--size, 3px);
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(255,255,255,1),
-    rgba(255,255,255,0.85) 40%,
-    rgba(122,162,255,0.8) 75%
-  );
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-  filter: drop-shadow(0 0 10px rgba(182,240,156,0.8));
-
-  /* Two animations:
-     1) star-life: fade in, hold, fade out (then we remove it)
-     2) star-twinkle: subtle brightness pulse while alive
-  */
-  animation:
-    star-life var(--life, 6s) ease-in-out var(--delay, 0s) forwards,
-    star-twinkle var(--twinkle, 1.2s) ease-in-out var(--delay, 0s) infinite;
-}
-
-@keyframes star-life {
-  0%   { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
-  10%  { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-  80%  { opacity: 1; }
-  100% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
-}
-
-@keyframes star-twinkle {
-  0%, 100% { filter: brightness(1.5) drop-shadow(0 0 6px rgba(182,240,156,0.45)); }
-  50%      { filter: brightness(3.2) drop-shadow(0 0 10px rgba(182,240,156,0.8)); }
-}
-
-/* Respect user preference */
-@media (prefers-reduced-motion: reduce) {
-  .star { animation: none !important; opacity: 0.7; }
-}
-
-    .footer-logo-wrap {
-  text-align: center;
-}
-
-.footer-logo {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 12px;
-}
-
-
-  </style>
-</head>
-<body id="top">
- <header>
-  <div id="starsField" class="stars-field" aria-hidden="true"></div>
-
-  <div class="container nav">
-
-    <a href="#top" class="brand">
-      <img src="favicon.svg" alt="LS1 logo" class="brand-logo">
-      <div class="brand-text">
-        <span class="brand-name">Lingges Shaswat</span>
-        <span class="brand-meta">Aerospace Engineering • University of Bristol</span>
-      </div>
-    </a>
-
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-  </div>
-</header>
-
-
-  
-
-  <main class="container">
-    <!-- Hero -->
-    <section class="hero">
-      <div>
-        <span class="tag">Aerospace • Engineering • Design • Analysis</span>
-        <h1>Lingges Shaswat's Engineering Portfolio</h1>
-        <p>A showcase of my curiosity, problem-solving mindset, and the projects that helped me grow as both an engineer and analyst.</p>
-        <div class="cta">
-          <a class="btn" href="#projects">View Projects</a>
-          <a class="btn ghost" href="#contact">Contact Me</a>
-        </div>
-      </div>
-      <div class="card panel">
-        <strong>Quick Links</strong>
-        <ul>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="Lingges Shaswat - Aerospace Engineering Graduate CV.pdf" target="_blank" rel="noreferrer noopener">Download CV</a></li>
-          <li><a href="https://linkedin.com/in/lingges-shaswat" target="_blank" rel="noreferrer noopener">LinkedIn</a></li>
-          <li><a href="https://github.com/lingges1" target="_blank" rel="noreferrer noopener">GitHub</a></li>
-          <li><a href="mailto:lshaswat@icloud.com">Email</a></li>
-        </ul>
-      </div>
-    </section>
-
-   <!-- About -->
-<section id="about" class="about">
-  <h2>About</h2>
-  <p>
-    I’m an Aerospace Engineering graduate from the University of Bristol who’s passionate about innovation, from advancing aircraft performance to exploring automotive technologies and applying data-driven tools to real engineering challenges.
-    I’m driven by curiosity and daily learning: I enjoy diving deep into complex systems to understand them from first principles and turning that understanding into practical, efficient designs.
-    My experience spans aerodynamics, flight mechanics, and structural design, using tools such as MATLAB, Python, and finite element software (Abaqus, Nastran).
-    Currently, I work as a Junior Business Analyst in a Project Management Office, where I apply analytical thinking and problem-solving to support evidence-based decisions and cross-functional collaboration.
-    My goal is to keep learning and be someone who enables innovation, combining technical design expertise, data-driven insight, and leadership to help shape the future of technology.
-  </p>
-</section>
-
-
-    <!-- Projects (code + analysis) -->
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="grid">
-        <!-- Example project card -->
-        <article class="project card">
-          <h3>Airbus Fixed-Wing Aircraft Design Project</h3>
-          <div class="meta">AutoDesk Inventor • AutoCAD 360 </div>
-          <p>As Chief Engineer, I led the end-to-end design of a 170-passenger, 4200 NM range commercial aircraft aimed at reducing direct operating costs by 15% compared to the Airbus A321neo.
-            I oversaw all aspects of the aircraft’s configuration; coordinating the aerodynamic, structural, performance, business and systems teams; to ensure performance optimisation, and regulatory compliance.
-            The final design featured a high-aspect-ratio low wing with folding tips, composite structures for weight reduction, and optimised aerodynamics achieving a 6% cost reduction. 
-            I contributed by desigining the fuel system and landing gear, contributing to the integration of critical subsystems within the overall airframe, ensuring compliance with ICAO Code C and CS-25 standards. 
-            This project enhanced my technical expertise in aerodynamics, structural analysis, and systems engineering, as well as my multidisciplinary project leadership and collaboration skills.</p>
-          <div class="badges">
-            <span class="badge">Chief Engineer</span>
-            <span class="badge">Fuel System Design</span>
-            <span class="badge">Landing Gear Design</span>
-            <span class="badge">Systems Engineering</span>
-            <span class="badge">Engineering Design</span>
-          </div>
-
-          <!-- inside the first project card -->
-<div class="media-grid" data-gallery="proj-airbus">
-  <figure class="media">
-    <img src="assets/airbus/cad_avdasi.png" alt="CAD Diagram" loading="lazy" />
-    <figcaption>CAD Diagram of the Aeroplane</figcaption>
-  </figure>
-  <figure class="media">
-    <img src="assets/airbus/fuel_system.png" alt="Fuel system schematic" loading="lazy" />
-    <figcaption>Fuel system schematic</figcaption>
-  </figure>
-  <figure class="media">
-    <img src="assets/airbus/landing_analysis.png" alt="Landing gear Analysis" loading="lazy" />
-    <figcaption>Landing gear load analysis</figcaption>
-  </figure>
-</div>
-
-          <div class="project-links">
-            <a href="assets/AVDASI_4_FEDR.pdf" class="btn-sm">📄 Report Summary</a>
-              <a href="#" class="btn-sm ghost open-role" data-role="role-airbus">👤 My Role</a>
-          </div>
-          <!-- Role content template for this project -->
-<template id="role-airbus">
-  <ul>
-    <li><strong>Chief Engineer:</strong> coordinated landing gear + fuel system workstreams across subteams.</li>
-    <li><strong>Fuel system design:</strong> sizing, layout, venting, and failure cases; cross-checked against CS-25.</li>
-    <li><strong>Landing gear loads:</strong> preliminary sizing, ground loads, and kinematics constraints.</li>
-    <li><strong>Systems integration:</strong> weight/performance trade-offs, cost target tracking, compliance.</li>
-    <li><strong>Outcome:</strong> 6% DOC reduction vs baseline; compliant with ICAO Code C & CS-25.</li>
-  </ul>
-</template>
-        </article>
-
-        <!-- Duplicate the article block for more projects -->
-
-         <!-- Example project card -->
-        <article class="project card">
-          <h3>Offshore Wind Turbine Design</h3>
-          <div class="meta">Ashes • Analysis • Sustainability</div>
-          <p>Designed and analysed an 18 MW offshore wind turbine using ASHES simulation software to optimise blade pitch control, structural integrity, and tower-foundation dynamics. Developed a pitch control schedule balancing aerodynamic efficiency and load regulation across operating regions. Performed structural checks on blades and tower under uniform and turbulent flows, identifying fatigue risks and resonance frequencies through modal and Campbell analyses. Proposed design optimisations for rotor diameter, material selection, and monopile foundation to enhance performance and reliability under offshore conditions.</p>
-          <div class="badges">
-            <span class="badge">Design</span>
-            <span class="badge">Wind Energy</span>
-            <span class="badge">Aerodynamics</span>
-          </div>
-
-           <!-- inside the first project card -->
-<div class="media-grid" data-gallery="proj-airbus">
-  <figure class="media">
-    <img src="assets/airbus/power_curve.png" alt="Power Curve" loading="lazy" />
-    <figcaption>Power Curve Analysis</figcaption>
-  </figure>
-  <figure class="media">
-    <img src="assets/airbus/turbine_loads.png" alt="Wind Turbine Loads" loading="lazy" />
-    <figcaption>Wind Turbine Loads under Uniform and Turbulent Flow Conditions</figcaption>
-  </figure>
-  <figure class="media">
-    <img src="assets/airbus/power_spectral.png" alt="Campbell and Power Spectral Density Graph" loading="lazy" />
-    <figcaption>Campbell and Power Spectral Density Graph</figcaption>
-  </figure>
-</div>
-          <div class="project-links">
-            <a href="assets/WES_Coursework_1963806.pdf" class="btn-sm">📄 Report Summary</a>
-            <a href="#" class="btn-sm ghost open-role" data-role="role-wind">👤 My Role</a>
-          </div>
-          <template id="role-wind">
-  <ul>
-    <li><strong>Lead Analyst:</strong> conducted aerodynamic performance simulations using ASHES to generate turbine power curves.</li>
-    <li><strong>Structural assessment:</strong> analysed tower and blade stresses under turbulent and uniform wind conditions.</li>
-    <li><strong>Dynamic modelling:</strong> produced Campbell and modal diagrams to identify critical resonance regions.</li>
-    <li><strong>Design optimisation:</strong> proposed pitch-control schedule and material changes to enhance fatigue life.</li>
-    <li><strong>Reporting:</strong> authored the technical report highlighting sustainability benefits and offshore reliability improvements.</li>
-  </ul>
-</template>
-        </article>
-
-        <!-- Duplicate the article block for more projects -->
-
-         <!-- Example project card -->
-        <article class="project card">
-          <h3>Wingbox Design and Optimization</h3>
-          <div class="meta">Abaqus • Finite Element Analysis • Composites • Lightweight</div>
-          <p>Designed, analysed, and optimised a composite cantilever wing substructure using analytical methods and finite element analysis in Abaqus. Conducted stress, strain, and buckling analyses under a 9.8 MPa limit load, comparing linear and nonlinear responses to validate beam theory predictions. Applied Hashin’s failure criteria to identify failure modes and performed laminate layup optimisation to reduce deflection and increase buckling stability. The final design achieved a 40% reduction in vertical tip deflection and a 76% increase in failure load while maintaining mass and symmetry requirements, demonstrating proficiency in composite design, structural optimisation, and FEA validation.</p>
-          <div class="badges">
-            <span class="badge">Design</span>
-            <span class="badge">Structures</span>
-            <span class="badge">Failure</span>
-          </div>
-
-          <div class="media-grid" data-gallery="proj-airbus">
-  <figure class="media">
-    <img src="assets/airbus/contourplot.png" alt="Contour Plots" loading="lazy" />
-    <figcaption>Contour Plots of Displacements and Strains</figcaption>
-  </figure>
-  <figure class="media">
-    <img src="assets/airbus/failure.png" alt="Hashin's Failure Criteria" loading="lazy" />
-    <figcaption> Contour plots for Hashin Criteria at different critical loads</figcaption>
-  </figure>
-  <figure class="media">
-    <img src="assets/airbus/composite.png" alt="Composite Layup of Wingbox" loading="lazy" />
-    <figcaption>Composite Layup of Root Cover in Wingbox</figcaption>
-  </figure>
-</div>
-          <div class="project-links">
-            <a href="assets/Composites_Lightweight.pdf" class="btn-sm">📄 Report Summary</a>
-            <a href="#" class="btn-sm ghost open-role" data-role="role-wingbox">👤 My Role</a>
-          </div>
-          <template id="role-wingbox">
-  <ul>
-    <li><strong>Structural Designer:</strong> created the composite wingbox model and validated geometry and boundary conditions in Abaqus.</li>
-    <li><strong>Finite Element Analyst:</strong> ran static and buckling analyses under limit and ultimate loads to verify stiffness and strength.</li>
-    <li><strong>Failure criteria:</strong> applied Hashin’s method to locate critical fibre and matrix failures within the laminate lay-up.</li>
-    <li><strong>Optimisation:</strong> refined ply orientation and stacking sequence to minimise tip deflection while maintaining mass balance.</li>
-    <li><strong>Documentation:</strong> produced detailed plots and failure maps for inclusion in the final structural report.</li>
-  </ul>
-</template>
-        </article>
-
-        <!-- Duplicate the article block for more projects -->
-
-        <!-- Example project card -->
-        <article class="project card">
-          <h3>Systems Engineering – Tethered UAV for Maritime Search and Rescue</h3>
-          <div class="meta">FMECA Risk Assessment • MBSE • Tradeoff • Systems Integration</div>
-          <p>Worked on the preliminary systems design of a Tethered Unmanned Aerial Vehicle (TUAV) to improve radio communications during coastal search and rescue missions. Defined and verified system-level requirements based on operational, environmental, and reliability constraints from the client brief. Conducted functional modelling, FMECA risk assessment, and Model-Based Systems Engineering (MBSE) analysis for the TUAV’s tethering, radio, and propulsion subsystems. Performed trade-off studies comparing TUAV, SATCOM, and fixed-wing architectures, concluding that the TUAV offered the optimal balance between cost, bandwidth, and deployability.</p>
-          <div class="badges">
-            <span class="badge">Systems</span>
-            <span class="badge">Search and Rescue</span>
-            <span class="badge">Integration</span>
-          </div>
-
-          <div class="media-grid" data-gallery="proj-airbus">
-  <figure class="media">
-    <img src="assets/airbus/system.png" alt="System architecture of Tethering Subsystem" loading="lazy" />
-    <figcaption>System architecture of Tethering Subsystem</figcaption>
-  </figure>
-  <figure class="media">
-    <img src="assets/airbus/fmeca.png" alt="FMECA of the Tethering Subsystem" loading="lazy" />
-    <figcaption>Failure Mode, Effects, and Criticality Analysis of the Tethering Subsystem</figcaption>
-  </figure>
-  <figure class="media">
-    <img src="assets/airbus/nsquared.png" alt="N-Squared Diagram of the MBSE" loading="lazy" />
-    <figcaption>N-Squared Diagram of the MBSE</figcaption>
-  </figure>
-</div>
-          <div class="project-links">
-            <a href="assets/Systems_Engineering.pdf" class="btn-sm">📄 Report Summary</a>
-            <a href="#" class="btn-sm ghost open-role" data-role="role-systems">👤 My Role</a>
-          </div>
-          <template id="role-systems">
-  <ul>
-    <li><strong>Systems Engineer:</strong> interpreted the client’s operational requirements into measurable system-level specifications.</li>
-    <li><strong>Architecture development:</strong> modelled functional decomposition and subsystem interactions using MBSE tools.</li>
-    <li><strong>Risk assessment:</strong> performed FMECA for tether, radio, and propulsion subsystems to identify critical failure modes.</li>
-    <li><strong>Trade-off analysis:</strong> compared TUAV, SATCOM, and fixed-wing architectures to determine optimal cost-to-performance ratio.</li>
-    <li><strong>Outcome:</strong> recommended TUAV architecture as most viable for rapid-deployment coastal rescue operations.</li>
-  </ul>
-</template>
-        </article>
-
-        <!-- Duplicate the article block for more projects -->
-
-        <!-- Example project card -->
-        <article class="project card">
-          <h3>Hydrogen-Powered Search and Rescue Quadcopter</h3>
-          <div class="meta">Quadcopters • Hydrogen • Fuel Cell  • Endurance </div>
-          <p>Developed a mathematical model in MATLAB to optimise the mass and flight endurance of a hydrogen-powered search and rescue drone. The study compared lithium-polymer batteries and hydrogen fuel cells to determine the critical mass point where fuel cells become more efficient. Conducted sensitivity analyses on mass, energy density, and system efficiency, finding peak endurance when the energy system constituted two-thirds of the drone’s total mass. This project advanced sustainable UAV design and highlighted the potential of hydrogen propulsion for extended flight operations.</p>
-          <div class="badges">
-            <span class="badge">Battery</span>
-            <span class="badge">Hydrogen</span>
-            <span class="badge">Analysis</span>
-          </div>
-
-          <div class="media-grid" data-gallery="proj-airbus">
-  <figure class="media">
-    <img src="assets/airbus/endurance.png" alt="Variables considered for Endurance Analysis" loading="lazy" />
-    <figcaption>Variables considered for Endurance Analysis</figcaption>
-  </figure>
-  <figure class="media">
-    <img src="assets/airbus/hydrogen.png" alt="Hydrogen storage affecting endurance" loading="lazy" />
-    <figcaption>Different hydrogen storages affecting endurance</figcaption>
-  </figure>
-  <figure class="media">
-    <img src="assets/airbus/endurancepower.png" alt="Endurance of different power sources" loading="lazy" />
-    <figcaption>Endurance of different power sources</figcaption>
-  </figure>
-</div>
-          <div class="project-links">
-            <a href="assets/Research_Project.pdf" class="btn-sm">📄 Report Summary</a>
-            <a href="#" class="btn-sm ghost open-role" data-role="role-hydrogen">👤 My Role</a>
-          </div>
-          <template id="role-hydrogen">
-  <ul>
-    <li><strong>Modelling Engineer:</strong> developed MATLAB scripts for energy and endurance prediction of hydrogen vs Li-ion systems.</li>
-    <li><strong>Data analyst:</strong> ran sensitivity studies varying mass fraction, fuel-cell efficiency, and energy density parameters.</li>
-    <li><strong>Performance evaluator:</strong> compared flight endurance trends to identify crossover efficiency points between power sources.</li>
-    <li><strong>Visualisation:</strong> generated plots and contour maps for publication-ready technical figures.</li>
-    <li><strong>Key insight:</strong> demonstrated that hydrogen propulsion maximises endurance when comprising two-thirds of system mass.</li>
-  </ul>
-</template>
-        </article>
-
-        <!-- Duplicate the article block for more projects -->
-
-         <!-- Example project card -->
-        <article class="project card">
-          <h3>Aerodynamics Design – Twin-Engine Airliner Optimization</h3>
-          <div class="meta">XFLR5 • xFOil • Aerodynamics • Stability </div>
-          <p>Performed aerodynamic analysis and optimization for a single-aisle, twin-engine 145-passenger airliner using XFLR5 and XFOIL. Conducted aerodynamic trimming, constraint diagram analysis, and drag breakdown (induced, viscous, pressure, and wave) at cruise conditions. Calculated total drag, static margin, and dynamic stability modes, validating results against the Airbus A320. Designed and analysed wing modifications—including aspect ratio increases and winglet configurations—to minimize induced drag, achieving a 33% reduction in induced drag coefficient and improved efficiency (Oswald factor increased from 0.95 to 0.98). This project demonstrated proficiency in aerodynamic modelling, stability analysis, and performance optimization through iterative design.</p>
-          <div class="badges">
-            <span class="badge">Aerodynamics</span>
-            <span class="badge">Drag</span>
-            <span class="badge">Optimization</span>
-          </div>
-
-          <div class="media-grid" data-gallery="proj-airbus">
-  <figure class="media">
-    <img src="assets/airbus/constraint.png" alt="Constraint Diagram of the Aircraft" loading="lazy" />
-    <figcaption>Constraint Diagram of the Aircraft</figcaption>
-  </figure>
-  <figure class="media">
-    <img src="assets/airbus/induceddrag.png" alt="Induced Drag Coefficient vs Lift Coefficient variation" loading="lazy" />
-    <figcaption>Induced Drag Coefficient vs Lift Coefficient variation due to aspect ratio and adding winglets</figcaption>
-  </figure>
-  <figure class="media">
-    <img src="assets/airbus/phugoid.png" alt="Short Period and Phugoid Mode Responses" loading="lazy" />
-    <figcaption>Responses for short period and phugoid mode</figcaption>
-  </figure>
-</div>
-          <div class="project-links">
-            <a href="assets/Aerodynamics_Design.pdf" class="btn-sm">📄 Report Summary</a>
-              <a href="#" class="btn-sm ghost open-role" data-role="role-aero">👤 My Role</a>
-          </div>
-          <template id="role-aero">
-  <ul>
-    <li><strong>Aerodynamicist:</strong> used XFLR5 and XFOIL to evaluate airfoil characteristics, lift curves, and drag polars.</li>
-    <li><strong>Performance analysis:</strong> performed constraint and mission range calculations for cruise, climb, and take-off phases.</li>
-    <li><strong>Stability testing:</strong> assessed static margin and dynamic stability (short-period and phugoid modes).</li>
-    <li><strong>Design refinement:</strong> introduced winglet geometry and aspect ratio changes to reduce induced drag by 33 %.</li>
-    <li><strong>Benchmarking:</strong> compared aerodynamic coefficients against Airbus A320 baseline for validation.</li>
-  </ul>
-</template>
-        </article>
-
-        <!-- Duplicate the article block for more projects -->
-
-        <!-- Example project card -->
-        <article class="project card">
-          <h3>UAV Design and Manufacturing – Lead Aerodynamics Engineer and Manufacturing Engineer</h3>
-          <div class="meta">CNC • xFoil • CFD Analysis  • Fixed Wing </div>
-          <p>As Lead Aerodynamics Engineer, I contributed to the design, analysis, and fabrication of a fixed-wing UAV prototype developed as part of a multidisciplinary team. I led the aerodynamic optimisation of the fuselage and tail configuration using XFOIL and wind tunnel testing, selecting and validating aerofoils (NACA 0009/0012) to balance stability, control authority, and drag reduction. Collaborating with the structures and manufacturing teams, I helped design and construct the composite fuselage and rear wing assembly, integrating carbon fibre spars, plywood ribs, and 3D-printed components. The project involved cross-functional coordination across aerodynamics, structures, control systems, and manufacturing, resulting in a flight-ready UAV that met stability, strength, and performance targets. This experience strengthened my technical expertise in aerodynamic design, CFD analysis, and practical manufacturing of aerospace structures.</p>
-          <div class="badges">
-            <span class="badge">Aerodynamics</span>
-            <span class="badge">Manufacturing</span>
-            <span class="badge">Lead Engineer</span>
-          </div>
-
-          <div class="media-grid" data-gallery="proj-airbus">
-  <figure class="media">
-    <img src="assets/airbus/vtp.png" alt="VTP Assembly" loading="lazy" />
-    <figcaption>Assembly of the Vertical Tailplane</figcaption>
-  </figure>
-  <figure class="media">
-    <img src="assets/airbus/fbd.png" alt="FBD of the UAV" loading="lazy" />
-    <figcaption>Free Body Diagram of the UAV</figcaption>
-  </figure>
-  <figure class="media">
-    <img src="assets/airbus/lift.png" alt="2D vs 3D Lift Gradient" loading="lazy" />
-    <figcaption>2D vs 3D Lift Gradient</figcaption>
-  </figure>
-</div>
-          <div class="project-links">
-            <a href="assets/UAV_Design.pdf" class="btn-sm">📄 Report Summary</a>
-            <a href="#" class="btn-sm ghost open-role" data-role="role-uav">👤 My Role</a>
-          </div>
-          <template id="role-uav">
-  <ul>
-    <li><strong>Lead Aerodynamics Engineer:</strong> selected and validated aerofoil profiles (NACA 0009/0012) using XFOIL and wind-tunnel data.</li>
-    <li><strong>CFD & performance:</strong> performed 2D and 3D lift analyses and compared simulation data to experimental results.</li>
-    <li><strong>Manufacturing Engineer:</strong> contributed to fuselage and tail assembly using carbon-fibre spars and 3D-printed components.</li>
-    <li><strong>Integration liaison:</strong> coordinated with structures and controls teams to meet mass and stability targets.</li>
-    <li><strong>Outcome:</strong> produced a flight-ready UAV meeting aerodynamic, strength, and control-surface requirements.</li>
-  </ul>
-</template>
-        </article>
-
-        <!-- Duplicate the article block for more projects -->
-      </div>
-    </section>
-
-
-    <!-- Contact -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>If you’d like to talk about graduate roles, or collaboration, email me or message via LinkedIn.</p>
-      <ul>
-        <li>Email: <a href="mailto:lshaswat@gmail.com">lshaswat@icloud.com</a></li>
-        <li>LinkedIn: <a href="https://www.linkedin.com/in/lingges-shaswat" target="_blank" rel="noreferrer noopener">linkedin.com/in/lingges-shaswat</a></li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-  <div class="container footer-logo-wrap">
-    <img src="favicon.svg" class="footer-logo" alt="LS1 logo">
-    <p>© <span id="y"></span> Lingges Shaswat • Aerospace Engineering Portfolio</p>
-    </div>
-  </footer>
-<!-- My Role Modal -->
-<div id="roleModal" aria-hidden="true" role="dialog" aria-modal="true">
-  <div class="role-card" role="document">
-    <div class="role-header">
-      <h3 class="role-title" id="roleTitle">My Role</h3>
-      <button class="role-close" aria-label="Close">✕</button>
-    </div>
-    <div class="role-body" id="roleBody"></div>
-  </div>
-</div>
-
-  <!-- Lightbox -->
-<div id="lightbox" aria-hidden="true">
-  <button class="lightbox-close" aria-label="Close">✕</button>
-  <img src="" alt="" />
-  <div class="lightbox-ui">
-    <button class="lightbox-btn prev" aria-label="Previous image">◀</button>
-    <button class="lightbox-btn next" aria-label="Next image">▶</button>
-  </div>
-</div>
-
-  
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
-  <script>
-  (function () {
-    const overlay = document.getElementById('lightbox');
-    const imgEl   = overlay.querySelector('img');
-    const btnPrev = overlay.querySelector('.prev');
-    const btnNext = overlay.querySelector('.next');
-    const btnClose= overlay.querySelector('.lightbox-close');
-
-    let currentGallery = [];
-    let currentIndex   = 0;
-
-    // Build galleries from each .media-grid
-    document.querySelectorAll('.media-grid').forEach(grid => {
-      const items = [...grid.querySelectorAll('figure.media img')].map(img => ({
-        src: img.getAttribute('src'),
-        alt: img.getAttribute('alt') || ''
-      }));
-      // Click to open
-      grid.addEventListener('click', e => {
-        const img = e.target.closest('img');
-        if (!img) return;
-        const allImgs = [...grid.querySelectorAll('img')];
-        currentGallery = items;
-        currentIndex = Math.max(0, allImgs.indexOf(img));
-        openLightbox();
-        show(currentIndex);
-      });
-    });
-
-    function openLightbox() {
-      overlay.classList.add('open');
-      overlay.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-      window.addEventListener('keydown', onKey);
-    }
-    function closeLightbox() {
-      overlay.classList.remove('open');
-      overlay.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-      window.removeEventListener('keydown', onKey);
-    }
-    function show(i) {
-      if (!currentGallery.length) return;
-      currentIndex = (i + currentGallery.length) % currentGallery.length;
-      const { src, alt } = currentGallery[currentIndex];
-      imgEl.src = src;
-      imgEl.alt = alt;
-    }
-    function next() { show(currentIndex + 1); }
-    function prev() { show(currentIndex - 1); }
-    function onKey(e) {
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowRight') next();
-      if (e.key === 'ArrowLeft') prev();
-    }
-
-    btnNext.addEventListener('click', next);
-    btnPrev.addEventListener('click', prev);
-    btnClose.addEventListener('click', closeLightbox);
-    overlay.addEventListener('click', e => {
-      // click outside image closes
-      if (e.target === overlay) closeLightbox();
-    });
-  })();
-</script>
-<script>
-  (function () {
-    const modal = document.getElementById('roleModal');
-    const body  = document.getElementById('roleBody');
-    const btnClose = modal.querySelector('.role-close');
-    const title = document.getElementById('roleTitle');
-
-    let lastFocused = null;
-
-    function openModal(templateId, heading = 'My Role') {
-      const tpl = document.getElementById(templateId);
-      if (!tpl) return;
-      title.textContent = heading;
-      body.innerHTML = '';
-      body.appendChild(tpl.content.cloneNode(true));
-
-      lastFocused = document.activeElement;
-      modal.classList.add('open');
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-      btnClose.focus();
-      window.addEventListener('keydown', onKey);
-      modal.addEventListener('click', onBackdrop);
-    }
-
-    function closeModal() {
-      modal.classList.remove('open');
-      modal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-      window.removeEventListener('keydown', onKey);
-      modal.removeEventListener('click', onBackdrop);
-      if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
-    }
-
-    function onKey(e) {
-      if (e.key === 'Escape') closeModal();
-      // simple focus trap: keep focus inside modal
-      if (e.key === 'Tab') {
-        const focusables = modal.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])');
-        const list = Array.from(focusables);
-        if (!list.length) return;
-        const i = list.indexOf(document.activeElement);
-        if (e.shiftKey && (i <= 0)) { e.preventDefault(); list[list.length - 1].focus(); }
-        else if (!e.shiftKey && (i === list.length - 1)) { e.preventDefault(); list[0].focus(); }
-      }
-    }
-    function onBackdrop(e) {
-      if (e.target === modal) closeModal();
-    }
-
-    // Hook up all "My Role" buttons
-    document.querySelectorAll('.open-role').forEach(btn => {
-      btn.addEventListener('click', e => {
-        e.preventDefault();
-        const id = btn.getAttribute('data-role');
-        const heading = btn.getAttribute('data-role-title') || 'My Role';
-        openModal(id, heading);
-      });
-    });
-
-    btnClose.addEventListener('click', closeModal);
-  })();
-</script>
-<script>
-  (function () {
-    const field = document.getElementById('starsField');
-    if (!field) return;
-
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-    function spawnStar() {
-      if (prefersReduced.matches) return; // be nice to users who prefer less motion
-
-      const star = document.createElement('div');
-      star.className = 'star';
-
-      // random position (0–100vw, 0–70vh so it stays mostly near the top)
-      const left = Math.random() * 100;
-      const top  = Math.random() * 70;
-
-      // brighter, larger, longer-lived stars
-      const size    = (Math.random() * 3 + 2).toFixed(1) + 'px';     // 2–5 px
-      const lifeS   = (8 + Math.random() * 6).toFixed(2) + 's';      // 8–14 s
-      const twinkle = (0.8 + Math.random() * 1.4).toFixed(2) + 's';  // 0.8–2.2 s
-      const delayS  = (Math.random() * 1.2).toFixed(2) + 's';        // 0–1.2 s
-
-      // apply styles via CSS variables
-      star.style.left = left + 'vw';
-      star.style.top  = top + 'vh';
-      star.style.setProperty('--size', size);
-      star.style.setProperty('--life', lifeS);
-      star.style.setProperty('--twinkle', twinkle);
-      star.style.setProperty('--delay', delayS);
-
-      // occasionally make a star extra bright
-      if (Math.random() < 0.12) {
-        star.style.filter = "drop-shadow(0 0 14px rgba(255,255,255,0.9))";
-      }
-
-      field.appendChild(star);
-
-      // remove after it finishes its life
-      const totalMs = (parseFloat(lifeS) + parseFloat(delayS)) * 1000;
-      setTimeout(() => star.remove(), totalMs + 150);
-    }
-
-    // spawn stars frequently (more stars = denser field)
-    const interval = setInterval(spawnStar, 120); // lower = more frequent; try 80 if you want even more
-    // kickstart a bunch immediately
-    for (let i = 0; i < 18; i++) spawnStar();
-
-    window.addEventListener('beforeunload', () => clearInterval(interval));
-  })();
-</script>
-
-</body>
-</html>
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/index.html b/index.html
+index 907632ac8586b4b2249b21d694c5605388e0d4da..26d2dd39951bdd086cdd70159b26d98e29755ce6 100644
+--- a/index.html
++++ b/index.html
+@@ -1,393 +1,241 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <title>Lingges Shaswat – Aerospace Engineering Portfolio</title>
+       <!-- Favicons -->
+     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+     <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+     <link rel="icon" href="/favicon-16.png" sizes="16x16" type="image/png">
+     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+ 
+   <meta name="description" content="Portfolio of an aspiring aerospace engineer: projects, reports, skills, and contact." />
+   <style>
+-    html {
+-  scroll-behavior: smooth;
+-}
++    /* =============================================================
++       GLOBAL STYLESHEET
++       Organized into themed blocks for easier scanning + editing.
++       ============================================================= */
++
++    /* ---------- Base + Theme Tokens ---------- */
++    html { scroll-behavior: smooth; }
+ 
+     :root {
+-      --bg: #0b0f17;       /* deep navy */
+-      --card: #121826;     /* slate */
+-      --ink: #e6edf6;      /* off-white */
+-      --muted: #a8b3c7;    /* muted text */
+-      --accent: #7aa2ff;   /* cool blue */
+-      --accent-2: #b6f09c; /* lime tint */
++      --bg: #0b0f17;
++      --card: #121826;
++      --ink: #e6edf6;
++      --muted: #a8b3c7;
++      --accent: #7aa2ff;
++      --accent-2: #b6f09c;
+       --ring: rgba(122,162,255,0.35);
+       --radius: 18px;
+     }
+ 
+     * { box-sizing: border-box; }
+-    html, body { height: 100%; }
++    html,
++    body { height: 100%; }
++
+     body {
+-      margin: 0;   padding-top: 20px; /* ADD THIS LINE */
+- font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+-      background: radial-gradient(1200px 600px at 10% 0%, rgba(122,162,255,0.08), transparent 60%),
+-                  radial-gradient(800px 600px at 90% 10%, rgba(182,240,156,0.08), transparent 60%),
+-                  var(--bg);
+-      color: var(--ink); line-height: 1.6;
++      margin: 0;
++      padding-top: 20px;
++      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
++      background:
++        radial-gradient(1200px 600px at 10% 0%, rgba(122,162,255,0.08), transparent 60%),
++        radial-gradient(800px 600px at 90% 10%, rgba(182,240,156,0.08), transparent 60%),
++        var(--bg);
++      color: var(--ink);
++      line-height: 1.6;
+     }
+ 
+     a { color: var(--accent); text-decoration: none; }
+     a:hover { text-decoration: underline; }
+ 
+     .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+ 
+-    /* Header */
++    /* ---------- Header / Navigation ---------- */
+     header {
+       position: fixed;
+-width: 100%;
+-top: 0;
+-left: 0;
+- backdrop-filter: blur(8px);
++      width: 100%;
++      top: 0;
++      left: 0;
++      backdrop-filter: blur(8px);
+       background: linear-gradient(to bottom, rgba(11,15,23,0.85), rgba(11,15,23,0.6));
+       border-bottom: 1px solid rgba(122,162,255,0.12);
+       z-index: 10;
+     }
++
+     .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+-    .brand {
+-  display: flex;
+-  align-items: center;
+-  gap: 12px;
+-  font-weight: 700;
+-}
+-
+-.brand-logo {
+-  width: 34px;
+-  height: 34px;
+-  border-radius: 8px;
+-  flex-shrink: 0;
+-}
+-
+-.brand-text {
+-  display: flex;
+-  flex-direction: column;
+-  line-height: 1.1;
+-}
+-
+-.brand-name {
+-  font-size: 16px;
+-}
+-
+-.brand-meta {
+-  font-size: 12px;
+-  color: var(--muted);
+-  font-weight: 500;
+-}
+-
+-    
++    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; }
++    .brand-logo { width: 34px; height: 34px; border-radius: 8px; flex-shrink: 0; }
++    .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
++    .brand-name { font-size: 16px; }
++    .brand-meta { font-size: 12px; color: var(--muted); font-weight: 500; }
+     .nav a { margin-left: 16px; font-weight: 600; }
+ 
+-    /* Hero */
++    /* ---------- Hero + Cards ---------- */
+     .hero { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 28px; align-items: center; padding: 64px 0 16px; }
+     .hero h1 { font-size: clamp(32px, 6vw, 56px); line-height: 1.05; margin: 0 0 12px; }
+     .hero p { color: var(--muted); margin: 0 0 24px; }
+     .tag { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: rgba(122,162,255,0.12); color: var(--ink); border: 1px solid rgba(122,162,255,0.25); font-weight: 600; }
+     .cta { display: inline-flex; gap: 12px; }
+     .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 16px; border-radius: 12px; border: 1px solid rgba(122,162,255,0.35); background: linear-gradient(160deg, rgba(122,162,255,0.16), rgba(182,240,156,0.12)); color: var(--ink); font-weight: 700; }
+     .btn:hover { box-shadow: 0 0 0 3px var(--ring); text-decoration: none; }
+     .ghost { background: transparent; }
+ 
+     .card {
+       background: linear-gradient(180deg, rgba(18,24,38,0.95), rgba(18,24,38,0.8));
+       border: 1px solid rgba(122,162,255,0.18);
+       border-radius: var(--radius);
+       box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+     }
+ 
+     .panel { padding: 20px; border-radius: 16px; background: rgba(255,255,255,0.02); border: 1px dashed rgba(122,162,255,0.25); }
+-
+     .panel ul { margin: 10px 0 0; padding-left: 18px; }
+ 
+-    /* Sections */
++    /* ---------- Section / Grid Utilities ---------- */
+     section { padding: 48px 0; }
+     h2 { font-size: clamp(22px, 3vw, 30px); margin: 0 0 18px; }
+     .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+ 
+-    /* About */
++    /* ---------- About ---------- */
+     .about p { color: var(--muted); }
+ 
+-    /* Projects */
++    /* ---------- Project Grid ---------- */
+     .project { grid-column: span 12; display: grid; grid-template-columns: 1fr; gap: 12px; padding: 18px; }
+     .project h3 { margin: 0; font-size: 20px; }
+     .meta { color: var(--muted); font-size: 14px; }
+     .badges { display: flex; flex-wrap: wrap; gap: 8px; }
+     .badge { padding: 6px 10px; border-radius: 999px; background: rgba(255,255,255,0.04); border: 1px solid rgba(122,162,255,0.22); font-size: 12px; color: var(--ink); }
+ 
+-    /* Skills */
++    /* ---------- Skills ---------- */
+     .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+     .chip { padding: 10px 12px; border-radius: 999px; background: rgba(122,162,255,0.12); border: 1px solid rgba(122,162,255,0.25); }
+ 
+-    /* Footer */
++    /* ---------- Footer ---------- */
+     footer { padding: 40px 0; color: var(--muted); border-top: 1px solid rgba(122,162,255,0.12); }
+ 
+-    /* Responsive */
++    .footer-logo-wrap { text-align: center; }
++    .footer-logo { width: 40px; height: 40px; margin-bottom: 12px; }
++
++    /* ---------- Responsive Layout ---------- */
+     @media (max-width: 880px) {
+       .hero { grid-template-columns: 1fr; }
+     }
+ 
+-    /* --- Project media grid + lightbox --- */
+-.media-grid {
+-  display: grid;
+-  grid-template-columns: repeat(12, 1fr);
+-  gap: 10px;
+-  margin-top: 6px;
+-}
+-.media {
+-  grid-column: span 4;              /* 3-up on desktop */
+-  background: rgba(255,255,255,0.03);
+-  border: 1px solid rgba(122,162,255,0.18);
+-  border-radius: 14px;
+-  overflow: hidden;
+-  cursor: zoom-in;
+-  transition: transform .15s ease, box-shadow .15s ease;
+-}
+-.media:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,0,0,.25); }
+-.media img {
+-  display: block;
+-  width: 100%;
+-  aspect-ratio: 16 / 9;
+-  height: auto;
+-  object-fit: cover;                /* crops nicely */
+-}
+-.media figcaption {
+-  padding: 8px 10px;
+-  font-size: 12px;
+-  color: var(--muted);
+-  border-top: 1px solid rgba(122,162,255,0.12);
+-}
+-
+-/* 2-up on tablets, 1-up on phones */
+-@media (max-width: 880px) { .media { grid-column: span 6; } }
+-@media (max-width: 560px){ .media { grid-column: span 12; } }
+-
+-/* Lightbox */
+-#lightbox {
+-  position: fixed; inset: 0; display: none; place-items: center;
+-  background: rgba(0,0,0,.6); backdrop-filter: blur(2px);
+-  z-index: 1000;
+-}
+-#lightbox.open { display: grid; }
+-#lightbox img {
+-  max-width: min(92vw, 1200px);
+-  max-height: 86vh;
+-  border-radius: 16px;
+-  border: 1px solid rgba(122,162,255,0.35);
+-  box-shadow: 0 20px 60px rgba(0,0,0,.5);
+-}
+-.lightbox-ui {
+-  position: fixed; inset: 0; pointer-events: none;
+-  display: flex; align-items: center; justify-content: space-between;
+-  padding: 24px;
+-}
+-.lightbox-btn {
+-  pointer-events: auto;
+-  border: 1px solid rgba(122,162,255,0.35);
+-  background: rgba(18,24,38,.85);
+-  color: var(--ink);
+-  border-radius: 999px;
+-  padding: 10px 14px;
+-  font-weight: 700;
+-}
+-.lightbox-close {
+-  position: fixed; top: 16px; right: 16px;
+-  pointer-events: auto;
+-  border: 1px solid rgba(122,162,255,0.35);
+-  background: rgba(18,24,38,.85);
+-  color: var(--ink);
+-  border-radius: 999px;
+-  padding: 10px 14px;
+-  font-weight: 800;
+-}
+-    /* --- New button styling for report/methodology links --- */
+-.project-links {
+-  display: flex;
+-  gap: 12px;
+-  margin-top: 8px;
+-}
+-
+-.btn-sm {
+-  display: inline-flex;
+-  align-items: center;
+-  padding: 8px 12px;
+-  border-radius: 10px;
+-  border: 1px solid rgba(122,162,255,0.35);
+-  background: rgba(122,162,255,0.1);
+-  color: var(--ink);
+-  font-size: 14px;
+-  font-weight: 600;
+-}
+-
+-.btn-sm.ghost {
+-  background: transparent;
+-  border-color: rgba(182,240,156,0.3);
+-}
+-
+-.btn-sm:hover {
+-  box-shadow: 0 0 0 2px var(--ring);
+-  text-decoration: none;
+-}
+-
+-    /* --- Role modal --- */
+-#roleModal {
+-  position: fixed; inset: 0;
+-  display: none; place-items: center;
+-  background: rgba(0,0,0,.6); backdrop-filter: blur(2px);
+-  z-index: 1100;
+-}
+-#roleModal.open { display: grid; }
+-
+-.role-card {
+-  width: min(680px, 92vw);
+-  background: linear-gradient(180deg, rgba(18,24,38,0.98), rgba(18,24,38,0.9));
+-  border: 1px solid rgba(122,162,255,0.28);
+-  border-radius: var(--radius);
+-  box-shadow: 0 20px 60px rgba(0,0,0,.5);
+-  padding: 18px 18px 20px;
+-  color: var(--ink);
+-}
+-
+-.role-header {
+-  display: flex; align-items: center; justify-content: space-between;
+-  gap: 10px; margin-bottom: 10px;
+-}
+-.role-title {
+-  font-size: 20px; margin: 0;
+-}
+-
+-.role-close {
+-  border: 1px solid rgba(122,162,255,0.35);
+-  background: rgba(18,24,38,.85);
+-  color: var(--ink);
+-  border-radius: 999px;
+-  padding: 8px 12px;
+-  font-weight: 800;
+-  cursor: pointer;
+-}
+-
+-.role-body ul { margin: 8px 0 0; padding-left: 18px; color: var(--muted); }
+-.role-body li + li { margin-top: 6px; }
+-
+-    /* --- Twinkling stars field --- */
+-.stars-field {
+-  position: fixed; inset: 0;
+-  pointer-events: none;           /* never block clicks */
+-  z-index: 0;                     /* sits behind your content */
+-  overflow: hidden;
+-}
+-
+-.star {
+-  position: absolute;
+-  width: var(--size, 3px);
+-  height: var(--size, 3px);
+-  border-radius: 50%;
+-  background: radial-gradient(
+-    circle,
+-    rgba(255,255,255,1),
+-    rgba(255,255,255,0.85) 40%,
+-    rgba(122,162,255,0.8) 75%
+-  );
+-  opacity: 1;
+-  transform: translate(-50%, -50%) scale(1);
+-  filter: drop-shadow(0 0 10px rgba(182,240,156,0.8));
+-
+-  /* Two animations:
+-     1) star-life: fade in, hold, fade out (then we remove it)
+-     2) star-twinkle: subtle brightness pulse while alive
+-  */
+-  animation:
+-    star-life var(--life, 6s) ease-in-out var(--delay, 0s) forwards,
+-    star-twinkle var(--twinkle, 1.2s) ease-in-out var(--delay, 0s) infinite;
+-}
+-
+-@keyframes star-life {
+-  0%   { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+-  10%  { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+-  80%  { opacity: 1; }
+-  100% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+-}
+-
+-@keyframes star-twinkle {
+-  0%, 100% { filter: brightness(1.5) drop-shadow(0 0 6px rgba(182,240,156,0.45)); }
+-  50%      { filter: brightness(3.2) drop-shadow(0 0 10px rgba(182,240,156,0.8)); }
+-}
+-
+-/* Respect user preference */
+-@media (prefers-reduced-motion: reduce) {
+-  .star { animation: none !important; opacity: 0.7; }
+-}
+-
+-    .footer-logo-wrap {
+-  text-align: center;
+-}
+-
+-.footer-logo {
+-  width: 40px;
+-  height: 40px;
+-  margin-bottom: 12px;
+-}
++    /* ---------- Project Media Grid + Lightbox ---------- */
++    .media-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 10px; margin-top: 6px; }
++    .media { grid-column: span 4; background: rgba(255,255,255,0.03); border: 1px solid rgba(122,162,255,0.18); border-radius: 14px; overflow: hidden; cursor: zoom-in; transition: transform .15s ease, box-shadow .15s ease; }
++    .media:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,0,0,.25); }
++    .media img { display: block; width: 100%; aspect-ratio: 16 / 9; height: auto; object-fit: cover; }
++    .media figcaption { padding: 8px 10px; font-size: 12px; color: var(--muted); border-top: 1px solid rgba(122,162,255,0.12); }
++
++    @media (max-width: 880px) { .media { grid-column: span 6; } }
++    @media (max-width: 560px) { .media { grid-column: span 12; } }
++
++    /* ---------- Lightbox Shell ---------- */
++    #lightbox { position: fixed; inset: 0; display: none; place-items: center; background: rgba(0,0,0,.6); backdrop-filter: blur(2px); z-index: 1000; }
++    #lightbox.open { display: grid; }
++    #lightbox img { max-width: min(92vw, 1200px); max-height: 86vh; border-radius: 16px; border: 1px solid rgba(122,162,255,0.35); box-shadow: 0 20px 60px rgba(0,0,0,.5); }
++    .lightbox-ui { position: fixed; inset: 0; pointer-events: none; display: flex; align-items: center; justify-content: space-between; padding: 24px; }
++    .lightbox-btn { pointer-events: auto; border: 1px solid rgba(122,162,255,0.35); background: rgba(18,24,38,.85); color: var(--ink); border-radius: 999px; padding: 10px 14px; font-weight: 700; }
++    .lightbox-close { position: fixed; top: 16px; right: 16px; pointer-events: auto; border: 1px solid rgba(122,162,255,0.35); background: rgba(18,24,38,.85); color: var(--ink); border-radius: 999px; padding: 10px 14px; font-weight: 800; }
++
++    /* ---------- Report / Methodology Buttons ---------- */
++    .project-links { display: flex; gap: 12px; margin-top: 8px; }
++    .btn-sm { display: inline-flex; align-items: center; padding: 8px 12px; border-radius: 10px; border: 1px solid rgba(122,162,255,0.35); background: rgba(122,162,255,0.1); color: var(--ink); font-size: 14px; font-weight: 600; }
++    .btn-sm.ghost { background: transparent; border-color: rgba(182,240,156,0.3); }
++    .btn-sm:hover { box-shadow: 0 0 0 2px var(--ring); text-decoration: none; }
++
++    /* ---------- Role Modal ---------- */
++    #roleModal { position: fixed; inset: 0; display: none; place-items: center; background: rgba(0,0,0,.6); backdrop-filter: blur(2px); z-index: 1100; }
++    #roleModal.open { display: grid; }
++    .role-card { width: min(680px, 92vw); background: linear-gradient(180deg, rgba(18,24,38,0.98), rgba(18,24,38,0.9)); border: 1px solid rgba(122,162,255,0.28); border-radius: var(--radius); box-shadow: 0 20px 60px rgba(0,0,0,.5); padding: 18px 18px 20px; color: var(--ink); }
++    .role-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
++    .role-title { font-size: 20px; margin: 0; }
++    .role-close { border: 1px solid rgba(122,162,255,0.35); background: rgba(18,24,38,.85); color: var(--ink); border-radius: 999px; padding: 8px 12px; font-weight: 800; cursor: pointer; }
++    .role-body ul { margin: 8px 0 0; padding-left: 18px; color: var(--muted); }
++    .role-body li + li { margin-top: 6px; }
++
++    /* ---------- Twinkling Stars Field ---------- */
++    .stars-field { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
++    .star {
++      position: absolute;
++      width: var(--size, 3px);
++      height: var(--size, 3px);
++      border-radius: 50%;
++      background: radial-gradient(circle, rgba(255,255,255,1), rgba(255,255,255,0.85) 40%, rgba(122,162,255,0.8) 75%);
++      opacity: 1;
++      transform: translate(-50%, -50%) scale(1);
++      filter: drop-shadow(0 0 10px rgba(182,240,156,0.8));
++      animation:
++        star-life var(--life, 6s) ease-in-out var(--delay, 0s) forwards,
++        star-twinkle var(--twinkle, 1.2s) ease-in-out var(--delay, 0s) infinite;
++    }
+ 
++    @keyframes star-life {
++      0%   { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
++      10%  { opacity: 1; transform: translate(-50%, -50%) scale(1); }
++      80%  { opacity: 1; }
++      100% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
++    }
++
++    @keyframes star-twinkle {
++      0%, 100% { filter: brightness(1.5) drop-shadow(0 0 6px rgba(182,240,156,0.45)); }
++      50%      { filter: brightness(3.2) drop-shadow(0 0 10px rgba(182,240,156,0.8)); }
++    }
+ 
++    @media (prefers-reduced-motion: reduce) {
++      .star { animation: none !important; opacity: 0.7; }
++    }
+   </style>
+ </head>
+ <body id="top">
+- <header>
+-  <div id="starsField" class="stars-field" aria-hidden="true"></div>
++  <!-- Site Header + Floating Navigation -->
++  <header>
++    <div id="starsField" class="stars-field" aria-hidden="true"></div>
+ 
+-  <div class="container nav">
++    <div class="container nav">
+ 
+     <a href="#top" class="brand">
+       <img src="favicon.svg" alt="LS1 logo" class="brand-logo">
+       <div class="brand-text">
+         <span class="brand-name">Lingges Shaswat</span>
+         <span class="brand-meta">Aerospace Engineering • University of Bristol</span>
+       </div>
+     </a>
+ 
+-    <nav>
+-      <a href="#about">About</a>
+-      <a href="#projects">Projects</a>
+-      <a href="#contact">Contact</a>
+-    </nav>
+-
+-  </div>
+-</header>
+-
++      <nav>
++        <a href="#about">About</a>
++        <a href="#projects">Projects</a>
++        <a href="#contact">Contact</a>
++      </nav>
+ 
+-  
++    </div>
++  </header>
+ 
++  <!-- Main content wrapper -->
+   <main class="container">
+     <!-- Hero -->
+     <section class="hero">
+       <div>
+         <span class="tag">Aerospace • Engineering • Design • Analysis</span>
+         <h1>Lingges Shaswat's Engineering Portfolio</h1>
+         <p>A showcase of my curiosity, problem-solving mindset, and the projects that helped me grow as both an engineer and analyst.</p>
+         <div class="cta">
+           <a class="btn" href="#projects">View Projects</a>
+           <a class="btn ghost" href="#contact">Contact Me</a>
+         </div>
+       </div>
+       <div class="card panel">
+         <strong>Quick Links</strong>
+         <ul>
+           <li><a href="#projects">Projects</a></li>
+           <li><a href="Lingges Shaswat - Aerospace Engineering Graduate CV.pdf" target="_blank" rel="noreferrer noopener">Download CV</a></li>
+           <li><a href="https://linkedin.com/in/lingges-shaswat" target="_blank" rel="noreferrer noopener">LinkedIn</a></li>
+           <li><a href="https://github.com/lingges1" target="_blank" rel="noreferrer noopener">GitHub</a></li>
+           <li><a href="mailto:lshaswat@icloud.com">Email</a></li>
+         </ul>
+       </div>
+     </section>
+ 
+    <!-- About -->
+@@ -732,209 +580,230 @@ left: 0;
+     </div>
+   </footer>
+ <!-- My Role Modal -->
+ <div id="roleModal" aria-hidden="true" role="dialog" aria-modal="true">
+   <div class="role-card" role="document">
+     <div class="role-header">
+       <h3 class="role-title" id="roleTitle">My Role</h3>
+       <button class="role-close" aria-label="Close">✕</button>
+     </div>
+     <div class="role-body" id="roleBody"></div>
+   </div>
+ </div>
+ 
+   <!-- Lightbox -->
+ <div id="lightbox" aria-hidden="true">
+   <button class="lightbox-close" aria-label="Close">✕</button>
+   <img src="" alt="" />
+   <div class="lightbox-ui">
+     <button class="lightbox-btn prev" aria-label="Previous image">◀</button>
+     <button class="lightbox-btn next" aria-label="Next image">▶</button>
+   </div>
+ </div>
+ 
+   
+   <script>
++    // Auto-update the copyright year so the footer stays current.
+     document.getElementById('y').textContent = new Date().getFullYear();
+   </script>
++
+   <script>
+-  (function () {
+-    const overlay = document.getElementById('lightbox');
+-    const imgEl   = overlay.querySelector('img');
+-    const btnPrev = overlay.querySelector('.prev');
+-    const btnNext = overlay.querySelector('.next');
+-    const btnClose= overlay.querySelector('.lightbox-close');
+-
+-    let currentGallery = [];
+-    let currentIndex   = 0;
+-
+-    // Build galleries from each .media-grid
+-    document.querySelectorAll('.media-grid').forEach(grid => {
+-      const items = [...grid.querySelectorAll('figure.media img')].map(img => ({
+-        src: img.getAttribute('src'),
+-        alt: img.getAttribute('alt') || ''
+-      }));
+-      // Click to open
+-      grid.addEventListener('click', e => {
+-        const img = e.target.closest('img');
+-        if (!img) return;
+-        const allImgs = [...grid.querySelectorAll('img')];
+-        currentGallery = items;
+-        currentIndex = Math.max(0, allImgs.indexOf(img));
+-        openLightbox();
+-        show(currentIndex);
++    // -------------------------------------------------------------
++    // Project Media Lightbox: handles gallery creation + navigation.
++    // -------------------------------------------------------------
++    (function () {
++      const overlay = document.getElementById('lightbox');
++      const imgEl   = overlay.querySelector('img');
++      const btnPrev = overlay.querySelector('.prev');
++      const btnNext = overlay.querySelector('.next');
++      const btnClose= overlay.querySelector('.lightbox-close');
++
++      let currentGallery = [];
++      let currentIndex   = 0;
++
++      // Build galleries from each .media-grid
++      document.querySelectorAll('.media-grid').forEach(grid => {
++        const items = [...grid.querySelectorAll('figure.media img')].map(img => ({
++          src: img.getAttribute('src'),
++          alt: img.getAttribute('alt') || ''
++        }));
++
++        // Click to open
++        grid.addEventListener('click', e => {
++          const img = e.target.closest('img');
++          if (!img) return;
++          const allImgs = [...grid.querySelectorAll('img')];
++          currentGallery = items;
++          currentIndex = Math.max(0, allImgs.indexOf(img));
++          openLightbox();
++          show(currentIndex);
++        });
+       });
+-    });
+ 
+-    function openLightbox() {
+-      overlay.classList.add('open');
+-      overlay.setAttribute('aria-hidden', 'false');
+-      document.body.style.overflow = 'hidden';
+-      window.addEventListener('keydown', onKey);
+-    }
+-    function closeLightbox() {
+-      overlay.classList.remove('open');
+-      overlay.setAttribute('aria-hidden', 'true');
+-      document.body.style.overflow = '';
+-      window.removeEventListener('keydown', onKey);
+-    }
+-    function show(i) {
+-      if (!currentGallery.length) return;
+-      currentIndex = (i + currentGallery.length) % currentGallery.length;
+-      const { src, alt } = currentGallery[currentIndex];
+-      imgEl.src = src;
+-      imgEl.alt = alt;
+-    }
+-    function next() { show(currentIndex + 1); }
+-    function prev() { show(currentIndex - 1); }
+-    function onKey(e) {
+-      if (e.key === 'Escape') closeLightbox();
+-      if (e.key === 'ArrowRight') next();
+-      if (e.key === 'ArrowLeft') prev();
+-    }
++      function openLightbox() {
++        overlay.classList.add('open');
++        overlay.setAttribute('aria-hidden', 'false');
++        document.body.style.overflow = 'hidden';
++        window.addEventListener('keydown', onKey);
++      }
+ 
+-    btnNext.addEventListener('click', next);
+-    btnPrev.addEventListener('click', prev);
+-    btnClose.addEventListener('click', closeLightbox);
+-    overlay.addEventListener('click', e => {
+-      // click outside image closes
+-      if (e.target === overlay) closeLightbox();
+-    });
+-  })();
+-</script>
+-<script>
+-  (function () {
+-    const modal = document.getElementById('roleModal');
+-    const body  = document.getElementById('roleBody');
+-    const btnClose = modal.querySelector('.role-close');
+-    const title = document.getElementById('roleTitle');
+-
+-    let lastFocused = null;
+-
+-    function openModal(templateId, heading = 'My Role') {
+-      const tpl = document.getElementById(templateId);
+-      if (!tpl) return;
+-      title.textContent = heading;
+-      body.innerHTML = '';
+-      body.appendChild(tpl.content.cloneNode(true));
+-
+-      lastFocused = document.activeElement;
+-      modal.classList.add('open');
+-      modal.setAttribute('aria-hidden', 'false');
+-      document.body.style.overflow = 'hidden';
+-      btnClose.focus();
+-      window.addEventListener('keydown', onKey);
+-      modal.addEventListener('click', onBackdrop);
+-    }
++      function closeLightbox() {
++        overlay.classList.remove('open');
++        overlay.setAttribute('aria-hidden', 'true');
++        document.body.style.overflow = '';
++        window.removeEventListener('keydown', onKey);
++      }
+ 
+-    function closeModal() {
+-      modal.classList.remove('open');
+-      modal.setAttribute('aria-hidden', 'true');
+-      document.body.style.overflow = '';
+-      window.removeEventListener('keydown', onKey);
+-      modal.removeEventListener('click', onBackdrop);
+-      if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+-    }
++      function show(i) {
++        if (!currentGallery.length) return;
++        currentIndex = (i + currentGallery.length) % currentGallery.length;
++        const { src, alt } = currentGallery[currentIndex];
++        imgEl.src = src;
++        imgEl.alt = alt;
++      }
+ 
+-    function onKey(e) {
+-      if (e.key === 'Escape') closeModal();
+-      // simple focus trap: keep focus inside modal
+-      if (e.key === 'Tab') {
+-        const focusables = modal.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])');
+-        const list = Array.from(focusables);
+-        if (!list.length) return;
+-        const i = list.indexOf(document.activeElement);
+-        if (e.shiftKey && (i <= 0)) { e.preventDefault(); list[list.length - 1].focus(); }
+-        else if (!e.shiftKey && (i === list.length - 1)) { e.preventDefault(); list[0].focus(); }
++      const next = () => show(currentIndex + 1);
++      const prev = () => show(currentIndex - 1);
++
++      function onKey(e) {
++        if (e.key === 'Escape') closeLightbox();
++        if (e.key === 'ArrowRight') next();
++        if (e.key === 'ArrowLeft') prev();
+       }
+-    }
+-    function onBackdrop(e) {
+-      if (e.target === modal) closeModal();
+-    }
+ 
+-    // Hook up all "My Role" buttons
+-    document.querySelectorAll('.open-role').forEach(btn => {
+-      btn.addEventListener('click', e => {
+-        e.preventDefault();
+-        const id = btn.getAttribute('data-role');
+-        const heading = btn.getAttribute('data-role-title') || 'My Role';
+-        openModal(id, heading);
++      btnNext.addEventListener('click', next);
++      btnPrev.addEventListener('click', prev);
++      btnClose.addEventListener('click', closeLightbox);
++      overlay.addEventListener('click', e => {
++        // Click outside the image closes the lightbox
++        if (e.target === overlay) closeLightbox();
+       });
+-    });
+-
+-    btnClose.addEventListener('click', closeModal);
+-  })();
+-</script>
+-<script>
+-  (function () {
+-    const field = document.getElementById('starsField');
+-    if (!field) return;
+-
+-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+-
+-    function spawnStar() {
+-      if (prefersReduced.matches) return; // be nice to users who prefer less motion
+-
+-      const star = document.createElement('div');
+-      star.className = 'star';
+-
+-      // random position (0–100vw, 0–70vh so it stays mostly near the top)
+-      const left = Math.random() * 100;
+-      const top  = Math.random() * 70;
+-
+-      // brighter, larger, longer-lived stars
+-      const size    = (Math.random() * 3 + 2).toFixed(1) + 'px';     // 2–5 px
+-      const lifeS   = (8 + Math.random() * 6).toFixed(2) + 's';      // 8–14 s
+-      const twinkle = (0.8 + Math.random() * 1.4).toFixed(2) + 's';  // 0.8–2.2 s
+-      const delayS  = (Math.random() * 1.2).toFixed(2) + 's';        // 0–1.2 s
+-
+-      // apply styles via CSS variables
+-      star.style.left = left + 'vw';
+-      star.style.top  = top + 'vh';
+-      star.style.setProperty('--size', size);
+-      star.style.setProperty('--life', lifeS);
+-      star.style.setProperty('--twinkle', twinkle);
+-      star.style.setProperty('--delay', delayS);
+-
+-      // occasionally make a star extra bright
+-      if (Math.random() < 0.12) {
+-        star.style.filter = "drop-shadow(0 0 14px rgba(255,255,255,0.9))";
++    })();
++  </script>
++
++  <script>
++    // -------------------------------------------------------------
++    // "My Role" Modal: clones template content into a11y-friendly
++    // modal, complete with focus trapping and escape handling.
++    // -------------------------------------------------------------
++    (function () {
++      const modal = document.getElementById('roleModal');
++      const body  = document.getElementById('roleBody');
++      const btnClose = modal.querySelector('.role-close');
++      const title = document.getElementById('roleTitle');
++
++      let lastFocused = null;
++
++      function openModal(templateId, heading = 'My Role') {
++        const tpl = document.getElementById(templateId);
++        if (!tpl) return;
++        title.textContent = heading;
++        body.innerHTML = '';
++        body.appendChild(tpl.content.cloneNode(true));
++
++        lastFocused = document.activeElement;
++        modal.classList.add('open');
++        modal.setAttribute('aria-hidden', 'false');
++        document.body.style.overflow = 'hidden';
++        btnClose.focus();
++        window.addEventListener('keydown', onKey);
++        modal.addEventListener('click', onBackdrop);
+       }
+ 
+-      field.appendChild(star);
++      function closeModal() {
++        modal.classList.remove('open');
++        modal.setAttribute('aria-hidden', 'true');
++        document.body.style.overflow = '';
++        window.removeEventListener('keydown', onKey);
++        modal.removeEventListener('click', onBackdrop);
++        if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
++      }
+ 
+-      // remove after it finishes its life
+-      const totalMs = (parseFloat(lifeS) + parseFloat(delayS)) * 1000;
+-      setTimeout(() => star.remove(), totalMs + 150);
+-    }
++      function onKey(e) {
++        if (e.key === 'Escape') closeModal();
++        // Simple focus trap: keep focus within the modal
++        if (e.key === 'Tab') {
++          const focusables = modal.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])');
++          const list = Array.from(focusables);
++          if (!list.length) return;
++          const i = list.indexOf(document.activeElement);
++          if (e.shiftKey && (i <= 0)) { e.preventDefault(); list[list.length - 1].focus(); }
++          else if (!e.shiftKey && (i === list.length - 1)) { e.preventDefault(); list[0].focus(); }
++        }
++      }
++
++      function onBackdrop(e) {
++        if (e.target === modal) closeModal();
++      }
+ 
+-    // spawn stars frequently (more stars = denser field)
+-    const interval = setInterval(spawnStar, 120); // lower = more frequent; try 80 if you want even more
+-    // kickstart a bunch immediately
+-    for (let i = 0; i < 18; i++) spawnStar();
++      // Hook up all "My Role" buttons
++      document.querySelectorAll('.open-role').forEach(btn => {
++        btn.addEventListener('click', e => {
++          e.preventDefault();
++          const id = btn.getAttribute('data-role');
++          const heading = btn.getAttribute('data-role-title') || 'My Role';
++          openModal(id, heading);
++        });
++      });
++
++      btnClose.addEventListener('click', closeModal);
++    })();
++  </script>
+ 
+-    window.addEventListener('beforeunload', () => clearInterval(interval));
+-  })();
+-</script>
++  <script>
++    // -------------------------------------------------------------
++    // Decorative star field: spawns, animates, and cleans up stars
++    // while respecting the user's reduced-motion preference.
++    // -------------------------------------------------------------
++    (function () {
++      const field = document.getElementById('starsField');
++      if (!field) return;
++
++      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
++
++      function spawnStar() {
++        if (prefersReduced.matches) return; // be nice to users who prefer less motion
++
++        const star = document.createElement('div');
++        star.className = 'star';
++
++        // Random position (0–100vw, 0–70vh so it stays mostly near the top)
++        const left = Math.random() * 100;
++        const top  = Math.random() * 70;
++
++        // Brighter, larger, longer-lived stars
++        const size    = (Math.random() * 3 + 2).toFixed(1) + 'px';     // 2–5 px
++        const lifeS   = (8 + Math.random() * 6).toFixed(2) + 's';      // 8–14 s
++        const twinkle = (0.8 + Math.random() * 1.4).toFixed(2) + 's';  // 0.8–2.2 s
++        const delayS  = (Math.random() * 1.2).toFixed(2) + 's';        // 0–1.2 s
++
++        // Apply styles via CSS variables
++        star.style.left = left + 'vw';
++        star.style.top  = top + 'vh';
++        star.style.setProperty('--size', size);
++        star.style.setProperty('--life', lifeS);
++        star.style.setProperty('--twinkle', twinkle);
++        star.style.setProperty('--delay', delayS);
++
++        // Occasionally make a star extra bright
++        if (Math.random() < 0.12) {
++          star.style.filter = 'drop-shadow(0 0 14px rgba(255,255,255,0.9))';
++        }
++
++        field.appendChild(star);
++
++        // Remove after it finishes its life
++        const totalMs = (parseFloat(lifeS) + parseFloat(delayS)) * 1000;
++        setTimeout(() => star.remove(), totalMs + 150);
++      }
++
++      // Spawn stars frequently (more stars = denser field)
++      const interval = setInterval(spawnStar, 120); // lower = more frequent; try 80 if you want even more
++      // Kickstart a bunch immediately
++      for (let i = 0; i < 18; i++) spawnStar();
++
++      window.addEventListener('beforeunload', () => clearInterval(interval));
++    })();
++  </script>
+ 
+ </body>
+ </html>
+ 
+EOF
+)
